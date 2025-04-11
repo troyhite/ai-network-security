@@ -79,19 +79,8 @@ resource keyVault 'Microsoft.KeyVault/vaults@2024-12-01-preview' = {
       family: 'A'
       name: 'standard'
     }
-    tenantId: 'af5aa053-13bd-491e-adf8-e1f7c8a7cb01'
-    accessPolicies: [
-      {
-        tenantId: 'af5aa053-13bd-491e-adf8-e1f7c8a7cb01'
-        objectId: '7121affe-6f5c-4e61-baa8-280ee2dff9d1'
-        permissions: {
-          keys: [ 'all' ]
-          secrets: [ 'all' ]
-          certificates: [ 'all' ]
-        }
-      }
-    ]
     publicNetworkAccess: 'Enabled'
+    tenantId: subscription().tenantId
   }
 }
 
