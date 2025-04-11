@@ -10,7 +10,7 @@ The Bicep template deploys the following resources:
    - Secure storage with TLS 1.2 enforced and public network access enabled.
 
 2. **Azure Cognitive Search Service**
-   - A search service with system-assigned identity and public network access disabled.
+   - A search service with system-assigned identity and public network access enabled.
 
 3. **Key Vault**
    - A secure vault for managing keys, secrets, and certificates with access policies.

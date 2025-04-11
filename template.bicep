@@ -67,7 +67,7 @@ resource searchService 'Microsoft.Search/searchServices@2025-02-01-preview' = {
   properties: {
     replicaCount: 1
     partitionCount: 1
-    publicNetworkAccess: 'Disabled'
+    publicNetworkAccess: 'Enabled'
   }
 }
 
