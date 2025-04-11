@@ -35,6 +35,9 @@ param adminUsername string
 @description('Name of the network interface')
 param networkInterfaceName string
 
+@description('Name of the AI Multi-service account')
+param aiMultiServiceAccountName string
+
 resource storageAccount 'Microsoft.Storage/storageAccounts@2024-01-01' = {
   name: storageAccountName
   location: 'eastus2'
@@ -44,7 +47,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2024-01-01' = {
   kind: 'StorageV2'
   properties: {
     publicNetworkAccess: 'Enabled'
-    allowBlobPublicAccess: false
+    allowBlobPublicAccess: true
     allowSharedKeyAccess: true
     minimumTlsVersion: 'TLS1_2'
     networkAcls: {
@@ -235,5 +238,20 @@ resource bastionHost 'Microsoft.Network/bastionHosts@2024-05-01' = {
         }
       }
     ]
+  }
+}
+
+resource aiMultiService 'Microsoft.CognitiveServices/accounts@2023-05-01' = {
+  name: aiMultiServiceAccountName
+  location: 'eastus2'
+  kind: 'CognitiveServices'
+  sku: {
+    name: 'S0'
+  }
+  properties: {
+    apiProperties: {
+      qnaRuntimeEndpoint: 'https://<your-qna-endpoint>'
+    }
+    publicNetworkAccess: 'Enabled'
   }
 }
