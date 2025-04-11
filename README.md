@@ -1,6 +1,8 @@
-# AI Network Security Bicep Template
+# Azure AI Network Security Quickstart
 
-This repository contains a Bicep template for deploying a secure AI network infrastructure on Azure. The template provisions various Azure resources, including storage accounts, virtual networks, virtual machines, AI workspaces, and more, with a focus on security and best practices.
+This repository contains a Bicep template for deploying Azure AI network infrastructure. The template provisions various Azure resources, including storage accounts, virtual networks, virtual machines, AI workspaces, and more. The resources that get provisioned are at their defaults and have public network access enabled on them by design. The ultimate goal is to understand how to configure private networking for all of these resources so they can properly communicate in a secure manner.
+
+![Final AI Network Architecture](images/ai-architecture.png)
 
 ## Resources Deployed
 
